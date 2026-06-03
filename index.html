@@ -1465,7 +1465,7 @@ document.querySelectorAll(".copy-btn").forEach(btn => {
   });
 });
 
-// ==================== CONTACT FORM (REAL EMAIL FUNCTIONALITY) ====================
+// ==================== CONTACT FORM ====================
 document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
   const name = document.getElementById("formName")?.value;
   const email = document.getElementById("formEmail")?.value;
@@ -1478,18 +1478,16 @@ document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
     return; 
   }
   
-  // Create mailto link with real data
+  // Open email client with pre-filled message
   const subject = `Portfolio Contact from ${name}`;
   const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
   const mailtoLink = `mailto:zayabansari@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
   
-  // Open email client
   window.location.href = mailtoLink;
   
   status.innerHTML = "✅ Opening your email client...";
   status.style.color = "green";
   
-  // Clear form
   document.getElementById("formName").value = "";
   document.getElementById("formEmail").value = "";
   document.getElementById("formMsg").value = "";
@@ -1497,26 +1495,16 @@ document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
   setTimeout(() => status.innerHTML = "", 4000);
 });
 
-// ==================== RESUME DOWNLOAD (REAL CV) ====================
+// ==================== RESUME DOWNLOAD (CV.pdf) ====================
 document.getElementById("resumeBtn")?.addEventListener("click", (e) => {
   e.preventDefault();
   
-  // Create a downloadable PDF link (you can replace with your actual CV URL)
-  // Option 1: If you have CV file in your GitHub repo
-  const cvUrl = "https://raw.githubusercontent.com/Zay7ab/Zay7ab/main/Muhammad_Zayab_Ansari_CV.pdf";
+  // 🔥 Aapka CV ka naam "cv.pdf" hai - yeh link automatically kaam karega 🔥
+  // Agar aapne GitHub pe "cv.pdf" upload kiya hai to yeh kaam karega
+  const cvUrl = "cv.pdf";
   
-  // Option 2: Auto-generate printable version of portfolio as CV
-  const usePrintable = confirm("Click OK to download printable portfolio as CV, or Cancel if you want to upload your own PDF file.");
-  
-  if (!usePrintable) {
-    // If you have custom CV URL, put it here
-    alert("📄 Please upload your CV file (CV.pdf) to your GitHub repo and update the link in the code.\n\nOr use the print button to save portfolio as PDF.");
-  } else {
-    window.print();
-  }
-  
-  // For real CV: Uncomment below line after uploading your CV to GitHub
-  // window.open(cvUrl, '_blank');
+  // Try to download the CV
+  window.open(cvUrl, '_blank');
 });
 
 // ==================== PRINT ====================
