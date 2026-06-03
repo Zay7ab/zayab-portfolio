@@ -138,7 +138,7 @@ h1, h2, h3, .logo, .hero h1, .section-header h2, .timeline-title, .project-title
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  height: 200px;
+  height: 280px;
 }
 /* ========== END SKELETON STYLES ========== */
 
@@ -633,8 +633,14 @@ section:last-child {
   box-shadow: var(--shadow);
 }
 
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .project-info {
-  padding: 24px;
+  padding: 20px;
 }
 
 .project-title {
@@ -979,6 +985,7 @@ footer {
   .print-btn { bottom: 100px; }
   .whatsapp-float { bottom: 30px; }
   .section-header h2 { font-size: 32px; }
+  .project-image { height: 160px; }
 }
 </style>
 </head>
@@ -1320,18 +1327,18 @@ footer {
 </div>
 
 <script>
-// ==================== PROJECTS DATA ====================
+// ==================== PROJECTS DATA WITH IMAGES ====================
 const projectsData = [
-  { name: "AI Digital Ghost", category: "ai-ml", tech: ["LLaMA 3", "Whisper", "Coqui TTS", "ChromaDB"], desc: "Personality preservation system — AI ghost with original voice and tone.", longDesc: "Uses LLaMA 3 via Ollama, ChromaDB for RAG, Whisper STT, Coqui TTS voice cloning.", github: "https://github.com/Zay7ab/AIDigitalGhost" },
-  { name: "Pakistan LegalAI", category: "rag", tech: ["LLaMA 3-70B", "LangChain", "FAISS", "FastAPI"], desc: "RAG platform with 12+ Pakistani laws, Urdu/English bilingual chatbot.", longDesc: "FYP project. 95%+ retrieval relevance. 25+ REST API endpoints. Deployed with Docker.", github: "https://github.com/Zay7ab/LegalAI" },
-  { name: "ClinIQ — Clinical AI", category: "ai-ml", tech: ["Random Forest", "CNN", "LLaMA 3.3", "FastAPI"], desc: "Multi-modal clinical diagnosis with sub-2s response.", longDesc: "Microservices-based clinical AI platform. Deployed on Hugging Face Spaces.", github: "https://github.com/Zay7ab/ClinIQ" },
-  { name: "Brain Tumor Detection", category: "cv", tech: ["YOLOv11", "PyTorch", "Streamlit"], desc: "93.5% mAP at 30 FPS on MRI scans.", longDesc: "YOLOv11-based brain tumor detection with data augmentation. Streamlit interface.", github: "https://github.com/Zay7ab/BrainTumorDetection" },
-  { name: "License Plate Detection", category: "cv", tech: ["YOLOv11", "Gradio", "OpenCV"], desc: "Real-time license plate detection from images/videos.", longDesc: "Supports multiple formats with bounding box visualization.", github: "https://github.com/Zay7ab/LicensePlateDetection" },
-  { name: "Flight Delay Prediction", category: "ai-ml", tech: ["XGBoost", "SMOTE", "Scikit-Learn"], desc: "89% precision/recall. 5-model A/B testing.", longDesc: "End-to-end ML pipeline with temporal feature engineering.", github: "https://github.com/Zay7ab/FlightDelay" },
-  { name: "Async Auth API", category: "backend", tech: ["FastAPI", "asyncpg", "Redis", "JWT"], desc: "Production auth system with JWT and Redis blacklisting.", longDesc: "Async connection pooling, dual-token JWT architecture.", github: "https://github.com/Zay7ab/AsyncAuthAPI" },
-  { name: "Pneumonia Detection", category: "cv", tech: ["CNN", "TensorFlow", "OpenCV"], desc: "Chest X-ray classifier for pneumonia detection.", longDesc: "CNN-based classifier on medical imaging datasets.", github: "https://github.com/Zay7ab/PneumoniaDetection" },
-  { name: "Teachable Machine Clone", category: "ai-ml", tech: ["MobileNetV3", "PyTorch", "FastAPI"], desc: "Train 3-class models in under 5 seconds.", longDesc: "Google Teachable Machine clone with transfer learning.", github: "https://github.com/Zay7ab/TeachableMachine" },
-  { name: "AI Chat & Image Gen", category: "ai-ml", tech: ["Groq API", "Hugging Face", "Pollinations.ai"], desc: "Dual-mode AI assistant: chat + image generation.", longDesc: "Streaming responses with error fallback.", github: "https://github.com/Zay7ab/AIChatApp" }
+  { name: "AI Digital Ghost", category: "ai-ml", tech: ["LLaMA 3", "Whisper", "Coqui TTS", "ChromaDB"], desc: "Personality preservation system — AI ghost with original voice and tone.", longDesc: "Uses LLaMA 3 via Ollama, ChromaDB for RAG, Whisper STT, Coqui TTS voice cloning.", github: "https://github.com/Zay7ab/AIDigitalGhost", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" },
+  { name: "Pakistan LegalAI", category: "rag", tech: ["LLaMA 3-70B", "LangChain", "FAISS", "FastAPI"], desc: "RAG platform with 12+ Pakistani laws, Urdu/English bilingual chatbot.", longDesc: "FYP project. 95%+ retrieval relevance. 25+ REST API endpoints. Deployed with Docker.", github: "https://github.com/Zay7ab/LegalAI", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop" },
+  { name: "ClinIQ — Clinical AI", category: "ai-ml", tech: ["Random Forest", "CNN", "LLaMA 3.3", "FastAPI"], desc: "Multi-modal clinical diagnosis with sub-2s response.", longDesc: "Microservices-based clinical AI platform. Deployed on Hugging Face Spaces.", github: "https://github.com/Zay7ab/ClinIQ", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" },
+  { name: "Brain Tumor Detection", category: "cv", tech: ["YOLOv11", "PyTorch", "Streamlit"], desc: "93.5% mAP at 30 FPS on MRI scans.", longDesc: "YOLOv11-based brain tumor detection with data augmentation. Streamlit interface.", github: "https://github.com/Zay7ab/BrainTumorDetection", image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop" },
+  { name: "License Plate Detection", category: "cv", tech: ["YOLOv11", "Gradio", "OpenCV"], desc: "Real-time license plate detection from images/videos.", longDesc: "Supports multiple formats with bounding box visualization.", github: "https://github.com/Zay7ab/LicensePlateDetection", image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop" },
+  { name: "Flight Delay Prediction", category: "ai-ml", tech: ["XGBoost", "SMOTE", "Scikit-Learn"], desc: "89% precision/recall. 5-model A/B testing.", longDesc: "End-to-end ML pipeline with temporal feature engineering.", github: "https://github.com/Zay7ab/FlightDelay", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop" },
+  { name: "Async Auth API", category: "backend", tech: ["FastAPI", "asyncpg", "Redis", "JWT"], desc: "Production auth system with JWT and Redis blacklisting.", longDesc: "Async connection pooling, dual-token JWT architecture.", github: "https://github.com/Zay7ab/AsyncAuthAPI", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" },
+  { name: "Pneumonia Detection", category: "cv", tech: ["CNN", "TensorFlow", "OpenCV"], desc: "Chest X-ray classifier for pneumonia detection.", longDesc: "CNN-based classifier on medical imaging datasets.", github: "https://github.com/Zay7ab/PneumoniaDetection", image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=600&h=400&fit=crop" },
+  { name: "Teachable Machine Clone", category: "ai-ml", tech: ["MobileNetV3", "PyTorch", "FastAPI"], desc: "Train 3-class models in under 5 seconds.", longDesc: "Google Teachable Machine clone with transfer learning.", github: "https://github.com/Zay7ab/TeachableMachine", image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop" },
+  { name: "AI Chat & Image Gen", category: "ai-ml", tech: ["Groq API", "Hugging Face", "Pollinations.ai"], desc: "Dual-mode AI assistant: chat + image generation.", longDesc: "Streaming responses with error fallback.", github: "https://github.com/Zay7ab/AIChatApp", image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop" }
 ];
 
 let currentFilter = "all";
@@ -1349,7 +1356,14 @@ function renderProjects() {
   filtered.forEach(p => {
     const card = document.createElement("div");
     card.className = "project-card";
-    card.innerHTML = `<div class="project-info"><div class="project-title">${p.name}</div><div class="project-desc">${p.desc}</div><div class="project-tech">${p.tech.map(t => `<span>${t}</span>`).join("")}</div></div>`;
+    card.innerHTML = `
+      <img class="project-image" src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/600x400/1d1d1f/ffffff?text=AI+Project'">
+      <div class="project-info">
+        <div class="project-title">${p.name}</div>
+        <div class="project-desc">${p.desc}</div>
+        <div class="project-tech">${p.tech.map(t => `<span>${t}</span>`).join("")}</div>
+      </div>
+    `;
     card.onclick = () => openModal(p);
     grid.appendChild(card);
   });
@@ -1478,14 +1492,13 @@ document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
     return; 
   }
   
-  // Open email client with pre-filled message
   const subject = `Portfolio Contact from ${name}`;
   const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
   const mailtoLink = `mailto:zayabansari@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
   
   window.location.href = mailtoLink;
   
-  status.innerHTML = "✅ Opening your email client...";
+  status.innerHTML = "✅ Opening email client...";
   status.style.color = "green";
   
   document.getElementById("formName").value = "";
@@ -1495,16 +1508,20 @@ document.getElementById("sendMsgBtn")?.addEventListener("click", () => {
   setTimeout(() => status.innerHTML = "", 4000);
 });
 
-// ==================== RESUME DOWNLOAD (CV.pdf) ====================
+// ==================== RESUME DOWNLOAD ====================
 document.getElementById("resumeBtn")?.addEventListener("click", (e) => {
   e.preventDefault();
+  const cvFile = "cv.pdf";
+  const downloadLink = document.createElement('a');
+  downloadLink.href = cvFile;
+  downloadLink.download = cvFile;
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
   
-  // 🔥 Aapka CV ka naam "cv.pdf" hai - yeh link automatically kaam karega 🔥
-  // Agar aapne GitHub pe "cv.pdf" upload kiya hai to yeh kaam karega
-  const cvUrl = "cv.pdf";
-  
-  // Try to download the CV
-  window.open(cvUrl, '_blank');
+  setTimeout(() => {
+    window.open(cvFile, '_blank');
+  }, 100);
 });
 
 // ==================== PRINT ====================
