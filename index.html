@@ -25,6 +25,7 @@
   --accent-hover: #0077ed;
   --card: #ffffff;
   --shadow: 0 2px 8px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.02);
+  --bg-rgb: 255, 255, 255;
 }
 
 [data-theme="dark"] {
@@ -37,6 +38,7 @@
   --accent-hover: #409cff;
   --card: #2c2c2e;
   --shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --bg-rgb: 29, 29, 31;
 }
 
 body {
@@ -127,25 +129,51 @@ body {
   opacity: 0.4;
 }
 
+/* ========== GLASSMORPHISM NAVBAR ========== */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
   padding: 16px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(10px);
+  background: rgba(var(--bg-rgb), 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(var(--bg-rgb), 0.2);
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+nav.scrolled {
+  background: rgba(var(--bg-rgb), 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(var(--bg-rgb), 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] nav {
+  background: rgba(var(--bg-rgb), 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] nav.scrolled {
+  background: rgba(var(--bg-rgb), 0.8);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent) 0%, #5e5ce0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .nav-links {
@@ -166,13 +194,15 @@ nav {
 }
 
 .theme-toggle {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  background: rgba(var(--bg-rgb), 0.6);
+  border: 1px solid rgba(var(--bg-rgb), 0.4);
   border-radius: 30px;
   padding: 8px 16px;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
+  backdrop-filter: blur(4px);
+  color: var(--text);
 }
 
 .hamburger {
@@ -197,7 +227,8 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--bg);
+  background: rgba(var(--bg-rgb), 0.95);
+  backdrop-filter: blur(20px);
   z-index: 999;
   flex-direction: column;
   justify-content: center;
@@ -345,20 +376,6 @@ section:last-child {
   border-radius: 24px;
 }
 
-.github-stat {
-  text-align: center;
-}
-
-.github-stat i {
-  font-size: 20px;
-  color: var(--accent);
-  margin-right: 8px;
-}
-
-.github-stat span {
-  font-weight: 600;
-}
-
 .section-header {
   text-align: center;
   margin-bottom: 48px;
@@ -466,11 +483,6 @@ section:last-child {
   transform: translate(-50%, -50%);
   font-size: 20px;
   font-weight: 700;
-}
-
-.skill-circle-card h3 {
-  margin-bottom: 12px;
-  font-size: 18px;
 }
 
 .skill-tags {
@@ -903,7 +915,7 @@ footer {
 
 <canvas id="particleCanvas"></canvas>
 
-<nav>
+<nav id="mainNav">
   <div class="logo">MZA</div>
   <div class="nav-links">
     <a href="#home">Home</a>
@@ -1403,6 +1415,16 @@ document.getElementById("resumeBtn")?.addEventListener("click", (e) => {
 
 // ==================== PRINT ====================
 document.getElementById("printBtn")?.addEventListener("click", () => window.print());
+
+// ==================== GLASS NAVBAR SCROLL ====================
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
 
 // ==================== THEME TOGGLE ====================
 function applyTheme(theme) {
