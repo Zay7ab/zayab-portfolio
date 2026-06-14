@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Muhammad Zayab Ansari — AI/ML Engineer | Premium Portfolio</title>
-<meta name="description" content="AI/ML Engineer - RAG, LLMs, Computer Vision. 15+ production projects. Available for hire."/>
+<title>Muhammad Zayab Ansari — AI Engineer | Portfolio</title>
+<meta name="description" content="AI Engineer specialising in RAG pipelines, LLMs, Computer Vision & production AI systems. Available for hire."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Satoshi:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
@@ -15,13 +15,13 @@
 
 :root {
   --bg: #ffffff; --bg-secondary: #f5f5f7; --text: #1d1d1f; --text-light: #6e6e73;
-  --border: #e4e4e8; --accent: #0071e3; --accent-hover: #0077ed;
+  --border: #e4e4e8; --accent: #0d7377; --accent-hover: #0a5c60;
   --card: #ffffff; --shadow: 0 2px 8px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.02);
   --bg-rgb: 255, 255, 255;
 }
 [data-theme="dark"] {
   --bg: #1d1d1f; --bg-secondary: #2c2c2e; --text: #f5f5f7; --text-light: #98989e;
-  --border: #38383a; --accent: #0a84ff; --accent-hover: #409cff;
+  --border: #38383a; --accent: #1a9499; --accent-hover: #0d7377;
   --card: #2c2c2e; --shadow: 0 2px 8px rgba(0,0,0,0.3); --bg-rgb: 29, 29, 31;
 }
 
@@ -30,7 +30,7 @@ body { font-family: 'Satoshi','Inter',sans-serif; background: var(--bg); color: 
 /* ===== SCROLL PROGRESS BAR ===== */
 #scrollProgress {
   position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-  background: linear-gradient(90deg, var(--accent), #5e5ce0, #bf5af2);
+  background: linear-gradient(90deg, var(--accent), #0a5c60, #1a9499);
   z-index: 9999; transition: width 0.1s linear;
   box-shadow: 0 0 8px var(--accent);
 }
@@ -43,7 +43,7 @@ body { font-family: 'Satoshi','Inter',sans-serif; background: var(--bg); color: 
   transition: transform 0.1s;
 }
 #cursorRing {
-  width: 32px; height: 32px; border: 2px solid rgba(0,113,227,0.4);
+  width: 32px; height: 32px; border: 2px solid rgba(13,115,119,0.4);
   border-radius: 50%; position: fixed; pointer-events: none;
   z-index: 9997; transform: translate(-50%,-50%);
   transition: transform 0.15s ease, width 0.2s, height 0.2s, border-color 0.2s;
@@ -102,7 +102,7 @@ nav.scrolled { background:rgba(var(--bg-rgb),0.75); backdrop-filter:blur(18px); 
 [data-theme="dark"] nav { background:rgba(var(--bg-rgb),0.55); border-bottom:1px solid rgba(255,255,255,0.08); }
 [data-theme="dark"] nav.scrolled { background:rgba(var(--bg-rgb),0.8); box-shadow:0 4px 20px rgba(0,0,0,0.3); }
 
-.logo { font-family:'Satoshi','Inter',sans-serif; font-weight:900; font-size:22px; letter-spacing:-0.03em; background:linear-gradient(135deg,var(--accent) 0%,#5e5ce0 100%); background-clip:text; -webkit-background-clip:text; color:transparent; }
+.logo { font-family:'Satoshi','Inter',sans-serif; font-weight:900; font-size:22px; letter-spacing:-0.03em; background:linear-gradient(135deg,var(--accent) 0%,#0a5c60 100%); background-clip:text; -webkit-background-clip:text; color:transparent; }
 .nav-links { display:flex; gap:32px; }
 .nav-links a { text-decoration:none; color:var(--text-light); font-size:14px; font-weight:500; transition:color 0.2s; }
 .nav-links a:hover { color:var(--accent); }
@@ -125,7 +125,7 @@ section:last-child { border-bottom:none; }
 /* ===== AVAILABILITY BADGE ===== */
 .availability-badge {
   display:inline-flex; align-items:center; gap:8px;
-  background: linear-gradient(135deg, rgba(52,199,89,0.15), rgba(0,113,227,0.1));
+  background: linear-gradient(135deg, rgba(52,199,89,0.15), rgba(13,115,119,0.1));
   border:1px solid rgba(52,199,89,0.4); border-radius:40px;
   padding:8px 20px; margin-bottom:20px; font-size:13px; font-weight:600;
   color: #1d1d1f; backdrop-filter:blur(8px);
@@ -140,7 +140,7 @@ section:last-child { border-bottom:none; }
   50%{ box-shadow:0 0 0 6px rgba(52,199,89,0); }
 }
 .availability-badge .avail-date {
-  background: rgba(0,113,227,0.15); color:var(--accent);
+  background: rgba(13,115,119,0.15); color:var(--accent);
   padding:2px 10px; border-radius:20px; font-size:11px; margin-left:4px;
 }
 
@@ -164,18 +164,7 @@ section:last-child { border-bottom:none; }
 .github-stat i { font-size:18px; color:var(--accent); margin-right:8px; }
 .github-stat span { font-weight:700; }
 
-/* ===== FIVERR RATING WIDGET ===== */
-.fiverr-widget {
-  display:inline-flex; align-items:center; gap:12px;
-  background:var(--bg-secondary); border:1px solid var(--border);
-  border-radius:16px; padding:12px 24px; margin-top:20px;
-  text-decoration:none; color:var(--text); transition:all 0.2s;
-}
-.fiverr-widget:hover { border-color:#1dbf73; transform:translateY(-2px); }
-.fiverr-badge { background:#1dbf73; color:white; font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:0.5px; }
-.fiverr-stars { color:#ffc107; font-size:14px; }
-.fiverr-text { font-size:13px; font-weight:600; }
-.fiverr-sub { font-size:11px; color:var(--text-light); }
+
 
 /* ===== SECTION HEADERS ===== */
 .section-header { text-align:center; margin-bottom:48px; }
@@ -293,14 +282,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
 .modal-content { background:var(--bg); border-radius:28px; max-width:600px; width:100%; max-height:80vh; overflow-y:auto; padding:36px; position:relative; }
 .modal-close { position:absolute; top:20px; right:24px; font-size:28px; cursor:pointer; color:var(--text-light); }
 
-/* ===== BLOG SECTION ===== */
-.blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:24px; }
-.blog-card { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:24px; transition:transform 0.2s,box-shadow 0.2s; text-decoration:none; color:var(--text); display:block; }
-.blog-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
-.blog-tag { font-size:11px; color:var(--accent); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; }
-.blog-title { font-size:16px; font-weight:700; margin-bottom:8px; font-family:'Satoshi','Inter',sans-serif; line-height:1.4; }
-.blog-desc { font-size:13px; color:var(--text-light); line-height:1.5; }
-.blog-meta { font-size:11px; color:var(--text-light); margin-top:16px; }
+
 
 @media print {
   .print-btn,.whatsapp-float,.theme-toggle,.hamburger,.mobile-menu,.filter-buttons,.search-box,.contact-form,#particleCanvas,#cursorDot,#cursorRing,#scrollProgress,#backToTop { display:none !important; }
@@ -321,6 +303,16 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
   .section-header h2 { font-size:32px; }
   #cursorDot,#cursorRing { display:none; }
 }
+
+/* ===== ARTICLES SECTION ===== */
+.blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:24px; }
+.blog-card { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:24px; transition:transform 0.2s,box-shadow 0.2s; text-decoration:none; color:var(--text); display:block; }
+.blog-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--accent); }
+.blog-tag { font-size:11px; color:var(--accent); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; }
+.blog-title { font-size:16px; font-weight:700; margin-bottom:8px; font-family:'Satoshi','Inter',sans-serif; line-height:1.4; }
+.blog-desc { font-size:13px; color:var(--text-light); line-height:1.5; }
+.blog-meta { font-size:11px; color:var(--text-light); margin-top:16px; }
+
 </style>
 </head>
 <body>
@@ -343,7 +335,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#blog">Blog</a>
+    <a href="#articles">Articles</a>
     <a href="#contact">Contact</a>
   </div>
   <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
@@ -357,7 +349,8 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#experience">Experience</a>
-  <a href="#blog">Blog</a>
+  
+  <a href="#articles">Articles</a>
   <a href="#contact">Contact</a>
   <button class="theme-toggle" id="mobileThemeToggle">🌙 Dark</button>
 </div>
@@ -385,10 +378,10 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
       Available for hire
       <span class="avail-date">Open to Work</span>
     </div>
-    <div class="hero-tag">⚡ AI/ML Engineer · Karachi, Pakistan</div>
+    <div class="hero-tag">⚡ AI Engineer · Karachi, Pakistan</div>
     <h1>Muhammad <span>Zayab</span> Ansari</h1>
     <div id="typingText"></div>
-    <div class="hero-desc">AI/ML Engineer specializing in RAG pipelines, LLMs, Computer Vision, and production-grade APIs. 15+ deployed projects on Fiverr.</div>
+    <div class="hero-desc">AI Engineer specialising in RAG pipelines, LLMs, Computer Vision, and production-grade APIs. Available for hire — remote & on-site.</div>
     <div class="btn-group">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
       <a href="#" class="btn btn-outline" id="resumeBtn"><i class="fas fa-download"></i> Download CV</a>
@@ -397,7 +390,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
       <a href="https://www.fiverr.com/zay7ab" target="_blank" class="btn btn-outline"><i class="fas fa-star"></i> Fiverr</a>
     </div>
     <div class="stats">
-      <div class="stat-item"><div class="stat-number counter" data-target="15">0</div><div class="stat-label">AI Projects</div></div>
+      <div class="stat-item"><div class="stat-number counter" data-target="6">0</div><div class="stat-label">AI Projects</div></div>
       <div class="stat-item"><div class="stat-number counter" data-target="25">0</div><div class="stat-label">GitHub Repos</div></div>
       <div class="stat-item"><div class="stat-number counter" data-target="8">0</div><div class="stat-label">Certifications</div></div>
       <div class="stat-item"><div class="stat-number counter" data-target="93">0</div><div class="stat-label">Best Accuracy %</div></div>
@@ -407,14 +400,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
       <div class="github-stat"><i class="fas fa-star"></i> <span id="starCount">--</span> stars</div>
       <div class="github-stat"><i class="fas fa-user-friends"></i> <span id="followersCount">--</span> followers</div>
     </div>
-    <a href="https://www.fiverr.com/zay7ab" target="_blank" class="fiverr-widget">
-      <span class="fiverr-badge">FIVERR</span>
-      <div>
-        <div class="fiverr-stars">★★★★★</div>
-        <div class="fiverr-text">5.0 Rating · 15+ Projects Delivered</div>
-        <div class="fiverr-sub">View my Fiverr profile →</div>
-      </div>
-    </a>
+    
   </div>
 </section>
 
@@ -430,9 +416,9 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
     <div class="skeleton skeleton-text" style="width:90%;"></div>
   </div>
   <div class="real-content" style="display:none;">
-    <p>Software Engineering graduate from SSUET, Karachi with 2+ years of experience building production AI systems. I architect RAG pipelines, train computer vision models, and deploy containerized APIs. Passionate about creating AI that actually ships and solves real problems for healthcare, legal, and enterprise domains.</p>
-    <p style="margin-top:20px;">My focus is the full AI engineering stack — data pipelines, model training, containerized deployment. I work in Python, build with FastAPI and LangChain, and care deeply about systems that are robust and genuinely useful.</p>
-    <p style="margin-top:20px;">✅ <strong>15+ successful projects delivered</strong> on Fiverr with 5-star ratings. <a href="https://www.fiverr.com/zay7ab" target="_blank" style="color:var(--accent);">View my Fiverr profile →</a></p>
+    <p>Software Engineering graduate from SSUET, Karachi, building production-grade AI systems. I architect RAG pipelines, agentic AI workflows, and cloud-native model deployments. Passionate about AI that actually ships and solves real problems across healthcare, legal tech, and cybersecurity.</p>
+    <p style="margin-top:20px;">My focus is the full AI engineering lifecycle — data pipeline design, model fine-tuning, inference optimisation, and containerised deployment. I build with Python, FastAPI, LangChain, and Docker, and care deeply about systems that are robust, scalable, and genuinely useful.</p>
+    
 
     <!-- TECH STACK LOGOS -->
     <div class="tech-stack-section">
@@ -470,10 +456,11 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
     <div class="skeleton skeleton-card" style="height:220px;"></div>
   </div>
   <div class="real-content services-grid" style="display:none;">
-    <div class="service-card"><div class="service-icon">🧠</div><h3>AI/ML Development</h3><p>Custom ML models, predictive analytics, and intelligent systems tailored to your needs.</p></div>
+    <div class="service-card"><div class="service-icon">🧠</div><h3>AI Development</h3><p>Custom ML models, predictive analytics, and intelligent systems tailored to your needs.</p></div>
     <div class="service-card"><div class="service-icon">🔮</div><h3>Generative AI & RAG</h3><p>LLM integration, RAG pipelines, chatbots, and agentic AI workflows.</p></div>
     <div class="service-card"><div class="service-icon">👁️</div><h3>Computer Vision</h3><p>Object detection, image classification, YOLO models, and real-time video analytics.</p></div>
     <div class="service-card"><div class="service-icon">⚙️</div><h3>Backend & API Development</h3><p>FastAPI, Docker, PostgreSQL — scalable production-ready APIs.</p></div>
+    <div class="service-card"><div class="service-icon">🛡️</div><h3>AI Security Systems</h3><p>ML-powered threat detection, SOC platforms, MITRE ATT&CK mapping, and SOAR integrations.</p></div>
   </div>
 </section>
 
@@ -523,18 +510,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section id="testimonials" class="fade-in-section">
-  <div class="section-header">
-    <div class="section-tag">TESTIMONIALS</div>
-    <h2>What Clients Say</h2>
-  </div>
-  <div class="real-content testimonials-grid">
-    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Excellent work! Delivered the RAG pipeline ahead of schedule. Great communication throughout the project. Highly recommended!"</div><div class="testimonial-author">— Client on <a href="https://www.fiverr.com/zay7ab" target="_blank" style="color:var(--accent);text-decoration:none;">Fiverr</a></div><div class="testimonial-title">RAG Development Project</div></div>
-    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Very professional YOLO model implementation for medical imaging. Delivered exactly what was needed with proper documentation and support."</div><div class="testimonial-author">— Client on <a href="https://www.fiverr.com/zay7ab" target="_blank" style="color:var(--accent);text-decoration:none;">Fiverr</a></div><div class="testimonial-title">Computer Vision Project</div></div>
-    <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"FastAPI backend was robust and scalable. Great work on the authentication system with Redis integration. Will hire again!"</div><div class="testimonial-author">— Client on <a href="https://www.fiverr.com/zay7ab" target="_blank" style="color:var(--accent);text-decoration:none;">Fiverr</a></div><div class="testimonial-title">Backend API Development</div></div>
-  </div>
-</section>
+
 
 <!-- ===== EXPERIENCE ===== -->
 <section id="experience" class="fade-in-section">
@@ -545,7 +521,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
   <div class="real-content">
     <div class="timeline">
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Jan 2025 — Present</div><div class="timeline-title">AI Engineering Intern</div><div class="timeline-sub">SMIT Bootcamp 5.0</div><div class="timeline-desc">Developed and deployed AI/ML models for NLP, CV, and GenAI. Built end-to-end pipelines with Docker.</div></div>
-      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Mar 2024 — Present</div><div class="timeline-title">Freelance AI/ML Engineer</div><div class="timeline-sub">Fiverr (15+ projects delivered)</div><div class="timeline-desc">15+ projects delivered. RAG, CV, chatbots. 5-star rating across all projects. <a href="https://www.fiverr.com/zay7ab" target="_blank" style="color:var(--accent);">View Fiverr Profile →</a></div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Mar 2024 — Present</div><div class="timeline-title">Freelance AI Engineer</div><div class="timeline-sub">Fiverr (Self-Employed)</div><div class="timeline-desc">Delivered freelance ML, NLP/RAG, and Computer Vision projects for international clients. 5-star rating across all engagements. <a href="https://www.fiverr.com/zay7ab" target="_blank" style="color:var(--accent);">View Fiverr Profile →</a></div></div>
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">2022 — 2026</div><div class="timeline-title">B.E. Software Engineering</div><div class="timeline-sub">SSUET, Karachi</div><div class="timeline-desc">FYP: LegalAI — RAG-based legal assistance system for Pakistani legal domain.</div></div>
       <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">2025 — 2026</div><div class="timeline-title">Data Science & AI Bootcamp</div><div class="timeline-sub">SMIT</div><div class="timeline-desc">LLMs, RAG, agentic AI workflows and production deployment.</div></div>
     </div>
@@ -570,30 +546,37 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
   </div>
 </section>
 
-<!-- ===== BLOG ===== -->
-<section id="blog" class="fade-in-section">
+
+
+
+<!-- ===== ARTICLES ===== -->
+<section id="articles" class="fade-in-section">
   <div class="section-header">
     <div class="section-tag">WRITING</div>
-    <h2>Articles & Insights</h2>
+    <h2>LinkedIn Articles</h2>
+    <p style="color:var(--text-light);font-size:15px;margin-top:12px;">Technical deep-dives on projects I've built — published on LinkedIn.</p>
   </div>
   <div class="real-content blog-grid">
     <a href="https://www.linkedin.com/in/muhammad-zayab-ansari-33947a121/" target="_blank" class="blog-card">
-      <div class="blog-tag">RAG · LLMs</div>
-      <div class="blog-title">Building a Production-Grade RAG Pipeline for Pakistani Legal Documents</div>
-      <div class="blog-desc">How I built LegalAI — challenges with Urdu text, FAISS indexing, and LLaMA 3-70B via Groq.</div>
+      <div style="font-size:36px;margin-bottom:16px;">⚖️</div>
+      <div class="blog-tag">RAG · LLMs · Legal Tech</div>
+      <div class="blog-title">How I Built a Production-Grade RAG System for Pakistani Legal Documents</div>
+      <div class="blog-desc">Data pipeline design, FAISS indexing, LLaMA 3-70B via Groq, bilingual Urdu/English support, and MLOps — everything I learned building LegalAI.</div>
       <div class="blog-meta">📖 LinkedIn Article · 2026</div>
     </a>
     <a href="https://www.linkedin.com/in/muhammad-zayab-ansari-33947a121/" target="_blank" class="blog-card">
-      <div class="blog-tag">Computer Vision</div>
-      <div class="blog-title">93.5% mAP on Brain Tumor Detection with YOLOv11</div>
-      <div class="blog-desc">Training process, data augmentation strategies, and deployment via Streamlit for medical imaging.</div>
+      <div style="font-size:36px;margin-bottom:16px;">🧠</div>
+      <div class="blog-tag">Computer Vision · Medical AI</div>
+      <div class="blog-title">93.5% mAP on Brain Tumor Detection — What I Built and What I Learned</div>
+      <div class="blog-desc">YOLOv11 transfer learning, data augmentation strategies, ONNX inference optimisation, and real-time deployment on Streamlit + Hugging Face Spaces.</div>
       <div class="blog-meta">📖 LinkedIn Article · 2026</div>
     </a>
     <a href="https://www.linkedin.com/in/muhammad-zayab-ansari-33947a121/" target="_blank" class="blog-card">
-      <div class="blog-tag">Freelancing · AI</div>
-      <div class="blog-title">How I Delivered 15+ AI Projects on Fiverr as a Student</div>
-      <div class="blog-desc">My workflow for client communication, scoping AI projects, and delivering production-ready code.</div>
-      <div class="blog-meta">📖 LinkedIn Article · 2026</div>
+      <div style="font-size:36px;margin-bottom:16px;">🛡️</div>
+      <div class="blog-tag">Cybersecurity · AI · MLOps</div>
+      <div class="blog-title">Building Sentrix: Why I'm Using a 7-Model AI Ensemble for Cybersecurity</div>
+      <div class="blog-desc">XGBoost, LSTM, Isolation Forest, MITRE ATT&CK mapping, and SOAR playbooks — how I'm architecting a cloud-native SOC platform with production-grade ML.</div>
+      <div class="blog-meta">📖 LinkedIn Article · 2026 · In Progress</div>
     </a>
   </div>
 </section>
@@ -607,7 +590,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
   <div class="real-content contact-grid">
     <div>
       <h3 style="font-size:28px;margin-bottom:16px;font-family:'Satoshi',sans-serif;font-weight:700;">Open to <span style="color:var(--accent);">opportunities</span></h3>
-      <p style="color:var(--text-light);margin-bottom:32px;">AI/ML roles — remote or Karachi-based.</p>
+      <p style="color:var(--text-light);margin-bottom:32px;">AI Engineer roles — remote or Karachi-based.</p>
       <div class="contact-item"><i class="fas fa-envelope"></i><span>zayabansari@outlook.com</span><button class="copy-btn" data-copy="zayabansari@outlook.com">📋</button></div>
       <div class="contact-item"><i class="fas fa-phone"></i><span>+92 333 345 0915</span><button class="copy-btn" data-copy="+923333450915">📋</button></div>
       <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/Zay7ab" target="_blank">github.com/Zay7ab</a></div>
@@ -630,7 +613,7 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
 </main>
 
 <footer>
-  <div>© 2026 Muhammad Zayab Ansari — AI/ML Engineer</div>
+  <div>© 2026 Muhammad Zayab Ansari — AI Engineer</div>
   <div style="margin-top:8px;">Karachi, Pakistan</div>
   <div style="margin-top:8px;">
     <a href="https://wa.me/923333450915" target="_blank" style="color:var(--accent);text-decoration:none;"><i class="fab fa-whatsapp"></i> WhatsApp</a> |
@@ -652,16 +635,13 @@ footer { text-align:center; padding:40px; border-top:1px solid var(--border); co
 <script>
 // ===== PROJECTS DATA =====
 const projectsData = [
-  { name:"AI Digital Ghost", category:"ai-ml", tech:["LLaMA 3","Whisper","Coqui TTS","ChromaDB"], desc:"Personality preservation system — AI ghost with original voice and tone.", longDesc:"Uses LLaMA 3 via Ollama, ChromaDB for RAG, Whisper STT, Coqui TTS voice cloning. 15+ hours of voice training for personality replication.", github:"https://github.com/Zay7ab/AIDigitalGhost", demo:"", emoji:"👻", color:"#6e40c9,#1a1a2e" },
+  { name:"Sentrix — Enterprise AI Security", category:"ai-ml", tech:["XGBoost","LSTM","FastAPI","WebSocket","Docker"], desc:"Cloud-native SOC platform. 7-model AI ensemble for real-time threat detection.", longDesc:"Building a full-stack Security Operations Center (SOC) platform with a 7-model AI ensemble. ML pipeline combines XGBoost, Isolation Forest, LSTM, and behavioural analytics for ransomware, C2, and brute-force detection with MITRE ATT&CK mapping. 300+ automated tests, JWT/RBAC, async PostgreSQL, SOAR playbooks. Multilingual (10 languages, RTL support).", github:"https://github.com/Zay7ab/Sentrix", demo:"", emoji:"🛡️", color:"#0a3d62,#051a2e", badge:"IN PROGRESS" },
   { name:"Pakistan LegalAI", category:"rag", tech:["LLaMA 3-70B","LangChain","FAISS","FastAPI"], desc:"RAG platform with 12+ Pakistani laws, Urdu/English bilingual chatbot.", longDesc:"FYP project. 95%+ retrieval relevance. 25+ REST API endpoints. Deployed with Docker. Supports both Urdu and English queries.", github:"https://github.com/Zay7ab/LegalAI", demo:"https://huggingface.co/spaces", emoji:"⚖️", color:"#1a4a6e,#0d2137" },
   { name:"ClinIQ — Clinical AI", category:"ai-ml", tech:["Random Forest","CNN","LLaMA 3.3","FastAPI"], desc:"Multi-modal clinical diagnosis with sub-2s response.", longDesc:"Microservices-based clinical AI platform. Deployed on Hugging Face Spaces. Supports symptom checking and preliminary diagnosis.", github:"https://github.com/Zay7ab/ClinIQ", demo:"https://huggingface.co/spaces", emoji:"🏥", color:"#006b6b,#004040" },
   { name:"Brain Tumor Detection", category:"cv", tech:["YOLOv11","PyTorch","Streamlit"], desc:"93.5% mAP at 30 FPS on MRI scans.", longDesc:"YOLOv11-based brain tumor detection with data augmentation. Streamlit interface. Trained on 5000+ MRI scans.", github:"https://github.com/Zay7ab/BrainTumorDetection", demo:"", emoji:"🧠", color:"#8b2252,#4a0f2e" },
-  { name:"License Plate Detection", category:"cv", tech:["YOLOv11","Gradio","OpenCV"], desc:"Real-time license plate detection from images/videos.", longDesc:"Supports multiple formats with bounding box visualization. 98% accuracy on standard datasets.", github:"https://github.com/Zay7ab/LicensePlateDetection", demo:"", emoji:"🚗", color:"#1a5e20,#0a2e10" },
   { name:"Flight Delay Prediction", category:"ai-ml", tech:["XGBoost","SMOTE","Scikit-Learn"], desc:"89% precision/recall. 5-model A/B testing.", longDesc:"End-to-end ML pipeline with temporal feature engineering. Handles imbalanced data with SMOTE.", github:"https://github.com/Zay7ab/FlightDelay", demo:"", emoji:"✈️", color:"#0d47a1,#071e42" },
   { name:"Async Auth API", category:"backend", tech:["FastAPI","asyncpg","Redis","JWT"], desc:"Production auth system with JWT and Redis blacklisting.", longDesc:"Async connection pooling, dual-token JWT architecture. Rate limiting and session management included.", github:"https://github.com/Zay7ab/AsyncAuthAPI", demo:"", emoji:"🔐", color:"#bf360c,#6a1b07" },
   { name:"Pneumonia Detection", category:"cv", tech:["CNN","TensorFlow","OpenCV"], desc:"Chest X-ray classifier for pneumonia detection.", longDesc:"CNN-based classifier on medical imaging datasets. 92% accuracy on test data.", github:"https://github.com/Zay7ab/PneumoniaDetection", demo:"", emoji:"🫁", color:"#1565c0,#0a3266" },
-  { name:"Teachable Machine Clone", category:"ai-ml", tech:["MobileNetV3","PyTorch","FastAPI"], desc:"Train 3-class models in under 5 seconds.", longDesc:"Google Teachable Machine clone with transfer learning. Supports image classification training via browser.", github:"https://github.com/Zay7ab/TeachableMachine", demo:"", emoji:"🤖", color:"#37474f,#1c2529" },
-  { name:"AI Chat & Image Gen", category:"ai-ml", tech:["Groq API","Hugging Face","Pollinations.ai"], desc:"Dual-mode AI assistant: chat + image generation.", longDesc:"Streaming responses with error fallback. Integrated with multiple AI providers for redundancy.", github:"https://github.com/Zay7ab/AIChatApp", demo:"", emoji:"💬", color:"#4527a0,#1f1060" }
 ];
 
 let currentFilter = "all", currentSearch = "";
@@ -680,13 +660,16 @@ function renderProjects() {
     card.className = "project-card";
     card.innerHTML = `
       <div class="project-image" style="background:linear-gradient(135deg,${p.color});position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
-          <span style="font-size:52px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));">${p.emoji}</span>
-          <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;">${p.category.replace('-',' ')}</span>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;">
+          <span style="font-size:56px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));line-height:1;">${p.emoji}</span>
+          <span style="font-size:13px;font-weight:800;color:rgba(255,255,255,0.95);letter-spacing:1.5px;text-transform:uppercase;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,0.4);">${p.name}</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:4px;">${p.tech.slice(0,3).map(t=>`<span style="background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);color:white;font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,0.2);">${t}</span>`).join("")}</div>
         </div>
-        <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.05);"></div>
-        <div style="position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.05);"></div>
+        <div style="position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.04);"></div>
+        <div style="position:absolute;bottom:-30px;left:-30px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.04);"></div>
+        <div style="position:absolute;top:50%;left:-60px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.03);"></div>
         ${p.demo ? '<span class="project-demo-badge">🔗 LIVE DEMO</span>' : ''}
+        ${p.badge ? `<span class="project-demo-badge" style="top:12px;left:12px;right:auto;background:rgba(255,140,0,0.9);color:#fff;font-weight:700;">${p.badge}</span>` : ''}
       </div>
       <div class="project-info">
         <div class="project-title">${p.name}</div>
@@ -732,7 +715,7 @@ window.addEventListener('load', function() {
 });
 
 // ===== TYPING =====
-const titles = ["AI / ML Engineer","RAG Specialist","Computer Vision Engineer","Software Engineer","Fiverr Top Rated"];
+const titles = ["AI Engineer","RAG Specialist","Computer Vision Engineer","Agentic AI Developer","MLOps Engineer"];
 let idx=0, charIdx=0;
 const typingEl = document.getElementById("typingText");
 function type() {
